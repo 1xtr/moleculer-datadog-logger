@@ -1,0 +1,58 @@
+{
+  "name": "@1xtr/moleculer-datadog-logger",
+  "version": "1.0.0",
+  "description": "Moleculer custom logger for Datadog",
+  "main": "src/cjs/index.js",
+  "module": "src/mjs/index.js",
+  "exports": {
+    ".": {
+      "import": "./src/mjs/index.mjs",
+      "require": "./src/cjs/index.js"
+    }
+  },
+  "scripts": {
+    "patch": "npm version patch",
+    "minor": "npm version minor",
+    "lint": "eslint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1xtr/moleculer-datadog-logger.git"
+  },
+  "keywords": [
+    "moleculer",
+    "datadog",
+    "logger"
+  ],
+  "author": "Aleksei Anisimov <i@trendco.dev>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/1xtr/moleculer-datadog-logger/issues"
+  },
+  "homepage": "https://github.com/1xtr/moleculer-datadog-logger#readme",
+  "devDependencies": {
+    "eslint": "^8.34.0",
+    "prettier": "^2.8.4"
+  },
+  "prettier": {
+    "semi": true,
+    "trailingComma": "es5",
+    "singleQuote": true,
+    "printWidth": 100
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true,
+      "es6": true
+    },
+    "extends": [
+      "eslint:recommended"
+    ]
+  },
+  "dependencies": {
+    "isomorphic-fetch": "^3.0.0",
+    "lodash": "^4.17.21",
+    "moleculer": "^0.14.28"
+  }
+}
