@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Moleculer custom logger for Datadog",
   "main": "src/cjs/index.js",
-  "module": "src/mjs/index.js",
+  "module": "src/mjs/index.mjs",
   "exports": {
     ".": {
       "import": "./src/mjs/index.mjs",
