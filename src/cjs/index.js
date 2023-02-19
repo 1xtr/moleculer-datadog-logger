@@ -134,13 +134,16 @@ class CustomDatadogLogger extends BaseLogger {
       if (
         this.opts.excludeModules.includes(bindings.mod) &&
         !(bindings.mod === 'broker' && typeIdx <= 1)
-      )
-        this.queue.push({
-          ts: Date.now(),
-          level: type,
-          msg: printArgs(args).join(' '),
-          bindings,
-        });
+      ) {
+        return;
+      }
+
+      this.queue.push({
+        ts: Date.now(),
+        level: type,
+        msg: printArgs(args).join(' '),
+        bindings,
+      });
       if (!this.opts.interval) this.flush();
     };
   }
