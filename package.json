@@ -1,9 +1,9 @@
 {
   "name": "@1xtr/moleculer-datadog-logger",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Moleculer custom logger for Datadog",
   "main": "src/cjs/index.js",
-  "module": "src/mjs/index.js",
+  "module": "src/mjs/index.mjs",
   "exports": {
     ".": {
       "import": "./src/mjs/index.mjs",
