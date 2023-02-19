@@ -1,6 +1,6 @@
 {
   "name": "@1xtr/moleculer-datadog-logger",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Moleculer custom logger for Datadog",
   "main": "src/cjs/index.js",
   "module": "src/mjs/index.mjs",

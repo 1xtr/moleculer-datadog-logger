@@ -123,23 +123,26 @@ export class CustomDatadogLogger extends Loggers.Base {
         return p;
       });
     };
-    const levelIdx = BaseLogger.LEVELS.indexOf(level);
+    const levelIdx = Loggers.Base.LEVELS.indexOf(level);
 
     return (type, args) => {
-      const typeIdx = BaseLogger.LEVELS.indexOf(type);
+      const typeIdx = Loggers.Base.LEVELS.indexOf(type);
       if (typeIdx > levelIdx) return;
 
       // allow only `error` and `fatal` from broker
       if (
         this.opts.excludeModules.includes(bindings.mod) &&
         !(bindings.mod === 'broker' && typeIdx <= 1)
-      )
-        this.queue.push({
-          ts: Date.now(),
-          level: type,
-          msg: printArgs(args).join(' '),
-          bindings,
-        });
+      ) {
+        return;
+      }
+
+      this.queue.push({
+        ts: Date.now(),
+        level: type,
+        msg: printArgs(args).join(' '),
+        bindings,
+      });
       if (!this.opts.interval) this.flush();
     };
   }
